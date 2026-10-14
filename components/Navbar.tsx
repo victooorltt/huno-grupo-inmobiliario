@@ -116,41 +116,27 @@ export function Navbar() {
               onMouseEnter={handleMouseEnter}
               onMouseLeave={handleMouseLeave}
             >
-              <div className="inline-flex items-center">
-                <Link
-                  href="/servicios/"
-                  className={`pl-3 pr-1 py-2 text-sm font-medium transition-colors duration-150 ${
-                    isServiciosActive
-                      ? 'text-[#FF0000] font-semibold'
-                      : 'text-zinc-700 hover:text-zinc-900'
-                  }`}
-                >
-                  Servicios
-                </Link>
-                <button
-                  type="button"
-                  onClick={() => setServicesDropdownOpen((prev) => !prev)}
-                  className={`p-1 text-zinc-500 hover:text-zinc-900 transition-transform duration-150 ${
+              <button
+                type="button"
+                onClick={() => setServicesDropdownOpen((prev) => !prev)}
+                className={`inline-flex items-center gap-1.5 px-3 py-2 text-sm font-medium transition-colors duration-150 ${
+                  isServiciosActive
+                    ? 'text-[#FF0000] font-semibold'
+                    : 'text-zinc-700 hover:text-zinc-900'
+                }`}
+                aria-expanded={servicesDropdownOpen}
+                aria-label="Desplegar menú de servicios"
+              >
+                <span>Servicios</span>
+                <ChevronDown
+                  className={`w-4 h-4 transition-transform duration-150 ${
                     servicesDropdownOpen ? 'rotate-180' : ''
                   }`}
-                  aria-expanded={servicesDropdownOpen}
-                  aria-label="Desplegar menú de servicios"
-                >
-                  <ChevronDown className="w-4 h-4" />
-                </button>
-              </div>
+                />
+              </button>
 
               {servicesDropdownOpen && (
                 <div className="absolute left-0 mt-1 w-80 rounded-xl bg-white border border-zinc-200 shadow-lg p-2 z-50 animate-in fade-in-0 duration-100">
-                  <div className="px-3 py-2 border-b border-zinc-100 mb-1">
-                    <Link
-                      href="/servicios/"
-                      className="text-xs font-semibold text-zinc-500 hover:text-[#FF0000] transition-colors"
-                      onClick={() => setServicesDropdownOpen(false)}
-                    >
-                      Ver todos los servicios →
-                    </Link>
-                  </div>
                   <div className="space-y-1">
                     {SERVICES.map((service) => (
                       <Link
@@ -256,29 +242,21 @@ export function Navbar() {
 
           {/* Mobile Servicios Accordion */}
           <div>
-            <div className="flex items-center justify-between py-2">
-              <Link
-                href="/servicios/"
-                onClick={() => setMobileMenuOpen(false)}
-                className={`text-base font-medium ${
-                  isServiciosActive ? 'text-[#FF0000] font-semibold' : 'text-zinc-800'
+            <button
+              type="button"
+              onClick={() => setMobileServicesOpen((prev) => !prev)}
+              className={`flex items-center justify-between w-full py-2 text-base font-medium text-left ${
+                isServiciosActive ? 'text-[#FF0000] font-semibold' : 'text-zinc-800'
+              }`}
+              aria-label="Abrir submenú de servicios"
+            >
+              <span>Servicios</span>
+              <ChevronDown
+                className={`w-5 h-5 transition-transform duration-150 ${
+                  mobileServicesOpen ? 'rotate-180' : ''
                 }`}
-              >
-                Servicios
-              </Link>
-              <button
-                type="button"
-                onClick={() => setMobileServicesOpen((prev) => !prev)}
-                className="p-1 text-zinc-500 hover:text-zinc-900"
-                aria-label="Abrir submenú de servicios"
-              >
-                <ChevronDown
-                  className={`w-5 h-5 transition-transform duration-150 ${
-                    mobileServicesOpen ? 'rotate-180' : ''
-                  }`}
-                />
-              </button>
-            </div>
+              />
+            </button>
 
             {mobileServicesOpen && (
               <div className="pl-4 border-l-2 border-zinc-200 space-y-2 mt-1 mb-2">
