@@ -111,9 +111,6 @@ export default function PropertyDetailPage({ params }: PageProps) {
                 <span className="bg-zinc-100 text-zinc-800 border border-zinc-200 text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-md">
                   {property.type}
                 </span>
-                <span className="text-xs text-zinc-400 font-mono">
-                  Ref: {property.id}
-                </span>
               </div>
 
               <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-zinc-900 leading-tight">

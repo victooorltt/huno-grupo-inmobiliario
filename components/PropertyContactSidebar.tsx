@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
-import { Mail, Phone, MessageSquare, CheckCircle2, User, Send, ShieldCheck } from 'lucide-react';
+import { Mail, Phone, MessageSquare, CheckCircle2, Send, ShieldCheck } from 'lucide-react';
 
 export interface PropertyContactSidebarProps {
   propertyTitle: string;
@@ -65,15 +65,20 @@ export function PropertyContactSidebar({
       {/* 1. Agent Box */}
       <div className="bg-white border border-zinc-200 rounded-2xl p-6 shadow-xs">
         <div className="flex items-center gap-4">
-          <div className="w-14 h-14 rounded-full bg-zinc-100 border-2 border-accent/20 flex items-center justify-center text-accent shrink-0">
-            <User className="w-7 h-7" aria-hidden="true" />
+          <div className="w-14 h-14 rounded-full overflow-hidden border-2 border-accent/20 bg-zinc-100 shrink-0 shadow-2xs">
+            <img
+              src="/NataliaArto.jpg"
+              alt="Natalia Arto - Gerencia HuNo Grupo Inmobiliario"
+              className="w-full h-full object-cover"
+              loading="lazy"
+            />
           </div>
           <div>
             <h3 className="text-lg font-bold text-zinc-900 leading-tight">
               Natalia Arto
             </h3>
             <p className="text-xs font-semibold uppercase tracking-wider text-accent mt-0.5">
-              gerencia
+              Gerencia
             </p>
             <p className="text-xs text-zinc-500 mt-1">
               HuNo Grupo Inmobiliario
