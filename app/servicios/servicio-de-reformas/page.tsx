@@ -24,7 +24,7 @@ export default function ServicioDeReformasPage() {
         contentMaxWidth="max-w-xl lg:max-w-[580px]"
         overlay={
           <div
-            className="absolute inset-0 bg-gradient-to-r from-white via-white/90 via-35% to-white/20 md:from-white md:via-white/80 md:via-30% md:to-transparent md:to-54%"
+            className="absolute inset-0 bg-gradient-to-b from-white/80 via-white/65 to-white/75 md:bg-gradient-to-r md:from-white md:via-white/80 md:via-30% md:to-transparent md:to-54%"
             aria-hidden="true"
           />
         }

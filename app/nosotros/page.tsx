@@ -58,7 +58,7 @@ export default function NosotrosPage() {
         contentMaxWidth="max-w-xl lg:max-w-[510px]"
         overlay={
           <div
-            className="absolute inset-0 bg-gradient-to-r from-white via-white/90 via-35% to-white/10 md:from-white md:via-white/85 md:via-28% md:to-transparent md:to-50%"
+            className="absolute inset-0 bg-gradient-to-b from-white/80 via-white/65 to-white/75 md:bg-gradient-to-r md:from-white md:via-white/85 md:via-28% md:to-transparent md:to-50%"
             aria-hidden="true"
           />
         }

@@ -32,8 +32,31 @@ export function PageHero({
   contentMaxWidth,
 }: PageHeroProps) {
   const isGradient = variant === 'gradient';
-  const effectiveAlign = align || (isGradient ? 'left' : 'center');
+  const effectiveAlign = align || (isGradient ? 'responsive-gradient' : 'center');
   const maxWidthClass = contentMaxWidth || 'max-w-3xl';
+
+  let alignmentClasses = 'mx-auto text-center';
+  let subtitleAlignClasses = 'mx-auto';
+
+  if (effectiveAlign === 'left') {
+    alignmentClasses = 'text-left';
+    subtitleAlignClasses = '';
+  } else if (effectiveAlign === 'responsive-gradient') {
+    // On mobile behaves like overlay (centered text and container), on md+ switches to left
+    alignmentClasses = 'mx-auto text-center md:mx-0 md:text-left';
+    subtitleAlignClasses = 'mx-auto md:mx-0';
+  }
+
+  // Handle image positioning: on mobile center the image, on desktop respect 'right center'
+  const isRightCenter = imagePosition === 'right center';
+  const isTailwindObject = imagePosition.startsWith('object-');
+  const objectPositionClass = isRightCenter
+    ? 'object-center md:object-[right_center]'
+    : isTailwindObject
+    ? imagePosition
+    : '';
+  const inlineObjectStyle =
+    !isRightCenter && !isTailwindObject ? { objectPosition: imagePosition } : undefined;
 
   return (
     <section
@@ -46,14 +69,8 @@ export function PageHero({
           alt={imageAlt}
           fetchPriority="high"
           loading="eager"
-          className={`absolute inset-0 w-full h-full object-cover pointer-events-none select-none ${
-            imagePosition.startsWith('object-') ? imagePosition : ''
-          }`}
-          style={
-            !imagePosition.startsWith('object-')
-              ? { objectPosition: imagePosition }
-              : undefined
-          }
+          className={`absolute inset-0 w-full h-full object-cover pointer-events-none select-none ${objectPositionClass}`}
+          style={inlineObjectStyle}
         />
       )}
 
@@ -61,9 +78,9 @@ export function PageHero({
       {overlay ? (
         overlay
       ) : isGradient ? (
-        // variant="gradient": full-width photo behind with left-to-right fade
+        // variant="gradient": on mobile full overlay wash, on desktop left-to-right fade
         <div
-          className="absolute inset-0 bg-gradient-to-r from-white via-white/90 via-40% to-white/20 md:from-white md:via-white/80 md:via-30% md:to-transparent md:to-58%"
+          className="absolute inset-0 bg-gradient-to-b from-white/80 via-white/65 to-white/75 md:bg-gradient-to-r md:from-white md:via-white/80 md:via-30% md:to-transparent md:to-58%"
           aria-hidden="true"
         />
       ) : (
@@ -76,13 +93,7 @@ export function PageHero({
 
       {/* Content */}
       <div className="relative z-10 mx-auto max-w-6xl px-6 py-16 lg:py-24 w-full">
-        <div
-          className={`${maxWidthClass} ${
-            effectiveAlign === 'center'
-              ? 'mx-auto text-center'
-              : 'text-left'
-          }`}
-        >
+        <div className={`${maxWidthClass} ${alignmentClasses}`}>
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-zinc-900 leading-tight">
             {title}
           </h1>
@@ -91,9 +102,7 @@ export function PageHero({
             <p
               className={`mt-4 text-base sm:text-lg lg:text-xl leading-relaxed ${
                 subtitleClassName || 'text-zinc-700'
-              } ${contentMaxWidth ? 'max-w-full' : 'max-w-2xl lg:max-w-3xl'} ${
-                effectiveAlign === 'center' ? 'mx-auto' : ''
-              }`}
+              } ${contentMaxWidth ? 'max-w-full' : 'max-w-2xl lg:max-w-3xl'} ${subtitleAlignClasses}`}
             >
               {subtitle}
             </p>
