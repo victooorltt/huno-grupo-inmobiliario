@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import {
-  ChevronRight,
   MapPin,
   Bed,
   Bath,
@@ -63,43 +62,7 @@ export default function PropertyDetailPage({ params }: PageProps) {
 
   return (
     <div className="bg-white min-h-screen">
-      {/* 1. Breadcrumbs */}
-      <nav
-        aria-label="Migas de pan"
-        className="border-b border-zinc-200 bg-zinc-50/50 py-3.5"
-      >
-        <div className="mx-auto max-w-6xl px-6">
-          <ol className="flex items-center flex-wrap gap-2 text-xs sm:text-sm text-zinc-500">
-            <li>
-              <Link
-                href="/"
-                className="hover:text-accent transition-colors font-medium text-zinc-600"
-              >
-                Inicio
-              </Link>
-            </li>
-            <li aria-hidden="true">
-              <ChevronRight className="w-3.5 h-3.5 text-zinc-400" />
-            </li>
-            <li>
-              <Link
-                href="/inmuebles/"
-                className="hover:text-accent transition-colors font-medium text-zinc-600"
-              >
-                Inmuebles
-              </Link>
-            </li>
-            <li aria-hidden="true">
-              <ChevronRight className="w-3.5 h-3.5 text-zinc-400" />
-            </li>
-            <li className="font-semibold text-zinc-900 truncate max-w-xs sm:max-w-md">
-              {property.title}
-            </li>
-          </ol>
-        </div>
-      </nav>
-
-      {/* 2. Top Header */}
+      {/* Top Header */}
       <header className="border-b border-zinc-200 py-8 lg:py-10 bg-white">
         <div className="mx-auto max-w-6xl px-6">
           <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6">
