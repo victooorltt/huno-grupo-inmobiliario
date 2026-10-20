@@ -336,70 +336,36 @@ export default function VenderPisoGijonPage() {
         </div>
       </section>
 
-      {/* 6. FAQ Section: 2-Column with image & collapsible accordion */}
+      {/* 6. FAQ Section: Clean Centered Accordion */}
       <section className={`${tokens.sectionSpacing} bg-white border-b border-zinc-200`}>
-        <div className={tokens.container}>
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
-            {/* Left Column: Heading, help card, and agency image */}
-            <div className="lg:col-span-5 space-y-6">
-              <div>
-                <span className="text-xs sm:text-sm font-semibold tracking-widest text-zinc-500 uppercase">
-                  Dudas Comunes
-                </span>
-                <h2 className="mt-2 text-3xl sm:text-4xl font-bold tracking-tight text-zinc-900 leading-tight">
-                  Preguntas frecuentes de propietarios
-                </h2>
-                <p className="mt-3 text-base text-zinc-600 leading-relaxed">
-                  Todo lo que necesita saber antes de poner su piso o casa a la venta en Gijón. Transparencia absoluta desde el primer día.
-                </p>
-              </div>
+        <div className="mx-auto max-w-4xl px-6">
+          <div className="text-center mb-10 lg:mb-12">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-zinc-900 leading-tight">
+              Preguntas frecuentes
+            </h2>
+            <p className="mt-4 text-base sm:text-lg text-zinc-600 max-w-2xl mx-auto leading-relaxed">
+              Todo lo que necesita saber antes de poner su piso o casa a la venta en Gijón. Transparencia absoluta desde el primer día.
+            </p>
+          </div>
 
-              {/* Photo of agency consultation */}
-              <div className="relative aspect-[4/3] rounded-2xl overflow-hidden border border-zinc-200/90 shadow-sm bg-zinc-100">
-                <img
-                  src="/images/nosotros-agencia.webp"
-                  alt="Asesoramiento inmobiliario en Gijón"
-                  className="w-full h-full object-cover"
-                  loading="lazy"
-                />
-              </div>
-
-              {/* Quick direct assistance card */}
-              <div className="p-6 rounded-2xl bg-zinc-50 border border-zinc-200/90 shadow-2xs flex items-center justify-between gap-4">
-                <div>
-                  <p className="text-sm font-bold text-zinc-900">¿Tiene alguna duda específica?</p>
-                  <p className="text-xs text-zinc-500 mt-0.5">Llámenos sin compromiso</p>
-                </div>
-                <a
-                  href="tel:678530312"
-                  className="inline-flex items-center gap-1.5 px-4 py-2.5 text-xs font-semibold text-white bg-accent hover:bg-accent-hover rounded-xl shadow-2xs transition-colors shrink-0"
-                >
-                  <Phone className="w-3.5 h-3.5" />
-                  <span>678 53 03 12</span>
-                </a>
-              </div>
-            </div>
-
-            {/* Right Column: Clean Collapsible Accordion */}
-            <div className="lg:col-span-7 space-y-3.5">
-              {FAQS.map((faq, index) => (
-                <details
-                  key={index}
-                  className="group rounded-2xl border border-zinc-200/90 bg-white overflow-hidden transition-all duration-200 open:shadow-xs open:border-zinc-300"
-                  open={index === 0}
-                >
-                  <summary className="flex items-center justify-between p-5 sm:p-6 cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden text-base sm:text-lg font-bold text-zinc-950 group-hover:text-accent transition-colors">
-                    <span className="pr-4">{faq.q}</span>
-                    <div className="w-8 h-8 rounded-lg bg-zinc-50 border border-zinc-200 flex items-center justify-center shrink-0 group-open:bg-red-50 group-open:border-red-200 transition-colors">
-                      <ChevronDown className="w-4 h-4 text-zinc-500 group-open:text-accent group-open:rotate-180 transition-transform duration-200" />
-                    </div>
-                  </summary>
-                  <div className="px-5 sm:px-6 pb-6 pt-1 text-sm sm:text-base text-zinc-600 leading-relaxed border-t border-zinc-100">
-                    {faq.a}
+          <div className="space-y-3.5">
+            {FAQS.map((faq, index) => (
+              <details
+                key={index}
+                className="group rounded-2xl border border-zinc-200/90 bg-white overflow-hidden transition-all duration-200 open:shadow-xs open:border-zinc-300"
+                open={index === 0}
+              >
+                <summary className="flex items-center justify-between p-5 sm:p-6 cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden text-base sm:text-lg font-bold text-zinc-950 group-hover:text-accent transition-colors">
+                  <span className="pr-4">{faq.q}</span>
+                  <div className="w-8 h-8 rounded-lg bg-zinc-50 border border-zinc-200 flex items-center justify-center shrink-0 group-open:bg-red-50 group-open:border-red-200 transition-colors">
+                    <ChevronDown className="w-4 h-4 text-zinc-500 group-open:text-accent group-open:rotate-180 transition-transform duration-200" />
                   </div>
-                </details>
-              ))}
-            </div>
+                </summary>
+                <div className="px-5 sm:px-6 pb-6 pt-1 text-sm sm:text-base text-zinc-600 leading-relaxed border-t border-zinc-100">
+                  {faq.a}
+                </div>
+              </details>
+            ))}
           </div>
         </div>
       </section>
