@@ -338,9 +338,9 @@ export default function VenderPisoGijonPage() {
                 <h3 className="text-2xl sm:text-3xl font-bold text-zinc-950 mt-1">
                   Natalia Arto
                 </h3>
-                <blockquote className="mt-4 text-sm sm:text-base text-zinc-700 italic leading-relaxed border-l-2 border-accent/40 pl-4 my-4">
-                  &ldquo;Vender una propiedad es una de las decisiones más importantes de su vida. Mi compromiso personal es asesorarle con la máxima honestidad y rigor, protegiendo su patrimonio como si fuera el mío propio.&rdquo;
-                </blockquote>
+                <p className="mt-3 text-sm sm:text-base text-zinc-600 leading-relaxed">
+                  Asesoramiento directo y personalizado para propietarios en Gijón y Asturias. Gestión integral de venta, estudio de viabilidad, resolución de herencias y acompañamiento profesional sin intermediarios.
+                </p>
 
                 <div className="mt-6 flex flex-wrap items-center justify-center sm:justify-start gap-4 pt-4 border-t border-zinc-100">
                   <a
