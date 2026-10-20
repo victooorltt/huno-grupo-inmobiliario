@@ -143,7 +143,7 @@ export default function VenderPisoGijonPage() {
             className="inline-flex items-center justify-center gap-2 px-6 py-3.5 text-base font-semibold text-zinc-900 bg-white/95 hover:bg-white border border-zinc-300 hover:border-zinc-400 rounded-xl transition-colors duration-150 shadow-xs"
           >
             <Phone className="w-4 h-4 text-accent" aria-hidden="true" />
-            <span>Llamar a Natalia Arto</span>
+            <span>Llamar a HuNo</span>
           </a>
         </div>
 
