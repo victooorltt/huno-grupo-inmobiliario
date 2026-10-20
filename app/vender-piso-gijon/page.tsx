@@ -164,47 +164,16 @@ export default function VenderPisoGijonPage() {
         </div>
       </PageHero>
 
-      {/* 2. Step 1: Interactive Valuation Section with Photo Intro */}
+      {/* 2. Interactive Valuation Section */}
       <section id="valoracion" className={`${tokens.sectionSpacing} bg-white border-b border-zinc-200 scroll-mt-20`}>
         <div className="mx-auto max-w-4xl px-6">
-          {/* Top Intro with Image */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center mb-10 lg:mb-12">
-            <div className="lg:col-span-7">
-              <span className="text-xs sm:text-sm font-semibold tracking-widest text-zinc-500 uppercase">
-                Paso 1 · Sin compromiso
-              </span>
-              <h2 className="mt-2 text-3xl sm:text-4xl font-bold tracking-tight text-zinc-900 leading-tight">
-                Solicite la valoración profesional de su inmueble
-              </h2>
-              <p className="mt-3 text-base text-zinc-600 leading-relaxed">
-                Complete los datos básicos de su vivienda y nuestros asesores le entregarán un informe personalizado basado en testigos reales de venta en su zona de Gijón.
-              </p>
-
-              <div className="mt-6 flex flex-wrap gap-3 text-xs sm:text-sm font-semibold text-zinc-800">
-                <div className="flex items-center gap-2 bg-zinc-50 border border-zinc-200 px-3.5 py-2 rounded-xl">
-                  <CheckCircle2 className="w-4 h-4 text-accent" />
-                  <span>100% Gratuito</span>
-                </div>
-                <div className="flex items-center gap-2 bg-zinc-50 border border-zinc-200 px-3.5 py-2 rounded-xl">
-                  <CheckCircle2 className="w-4 h-4 text-accent" />
-                  <span>Respuesta en 24h</span>
-                </div>
-                <div className="flex items-center gap-2 bg-zinc-50 border border-zinc-200 px-3.5 py-2 rounded-xl">
-                  <CheckCircle2 className="w-4 h-4 text-accent" />
-                  <span>Testigos reales</span>
-                </div>
-              </div>
-            </div>
-
-            <div className="lg:col-span-5">
-              <div className="relative aspect-[4/3] rounded-2xl overflow-hidden border border-zinc-200/90 shadow-sm bg-zinc-100">
-                <img
-                  src="/images/valoracion-profesional.webp"
-                  alt="Valoración inmobiliaria profesional en Gijón"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </div>
+          <div className="text-center mb-10 lg:mb-12">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-zinc-900 leading-tight">
+              Solicite la valoración profesional de su inmueble
+            </h2>
+            <p className="mt-4 text-base sm:text-lg text-zinc-600 max-w-2xl mx-auto leading-relaxed">
+              Complete los datos básicos de su vivienda y nuestros asesores le entregarán un informe personalizado basado en testigos reales de venta en su zona de Gijón.
+            </p>
           </div>
 
           {/* Embed Valuation Form */}
