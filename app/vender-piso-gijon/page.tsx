@@ -4,17 +4,15 @@ import {
   TrendingUp,
   ShieldCheck,
   Award,
-  KeyRound,
   Calculator,
   ArrowRight,
   Phone,
   MessageCircle,
-  Clock,
   FileCheck,
   Camera,
   Users,
   CheckCircle2,
-  HelpCircle,
+  ChevronDown,
   Building2,
   Scale,
 } from 'lucide-react';
@@ -29,34 +27,30 @@ export const metadata: Metadata = {
     '¿Quiere vender su piso o casa en Gijón? Le garantizamos valoración profesional gratuita, filtro de compradores solventes, gestión legal completa y venta al mejor precio de mercado.',
 };
 
-const STEPS = [
+const CARDS = [
   {
-    step: '01',
     title: 'Valoración Real de Mercado',
     description:
-      'Analizamos datos de compraventas reales escrituradas en su zona de Gijón. Fijamos un precio competitivo para maximizar el beneficio sin quemar el inmueble.',
-    icon: TrendingUp,
+      'Estudiamos compraventas reales escrituradas en su zona de Gijón para fijar el precio óptimo que atraiga compradores solventes sin quemar el inmueble.',
+    image: '/images/vender-valoracion-card.webp',
   },
   {
-    step: '02',
     title: 'Reportaje y Difusión Multicanal',
     description:
-      'Realizamos un reportaje fotográfico profesional, redactamos descripciones atractivas y posicionamos su vivienda de forma destacada en los principales portales.',
-    icon: Camera,
+      'Fotografía profesional de interiores, planos y publicación destacada en Idealista, Fotocasa y nuestra cartera directa de compradores e inversores.',
+    image: '/images/vender-reportaje-card.webp',
   },
   {
-    step: '03',
     title: 'Filtro Riguroso de Compradores',
     description:
-      'Estudiamos la viabilidad financiera e hipotecaria de cada interesado antes de concertar visitas. Solo visitas de compradores reales con solvencia acreditada.',
-    icon: Users,
+      'Comprobamos la solvencia económica y viabilidad hipotecaria de cada interesado antes de concertar visitas. Cero curiosos ni pérdidas de tiempo.',
+    image: '/images/vender-filtro-card.webp',
   },
   {
-    step: '04',
     title: 'Gestión Legal, Herencias y Notaría',
     description:
-      'Redactamos contratos de arras con total seguridad jurídica, resolvemos trámites de herencias o plusvalías y le acompañamos hasta la firma notarial.',
-    icon: Scale,
+      'Redacción rigurosa de contratos de arras, tramitación de herencias, plusvalías y certificados hasta la firma definitiva en notaría.',
+    image: '/images/vender-notaria-card.webp',
   },
 ];
 
@@ -64,17 +58,17 @@ const ADVANTAGES = [
   {
     title: 'Trato directo con la gerencia',
     description:
-      'En HuNo su inmueble no pasa de mano en mano entre comerciales novatos. Natalia Arto gestiona y supervisa personalmente cada operación.',
+      'En HuNo su inmueble no pasa de mano en mano entre comerciales novatos. Natalia Arto gestiona y supervisa personalmente cada operación de principio a fin.',
     icon: Award,
   },
   {
     title: 'Filtro financiero previo',
     description:
-      'Evitamos visitas innecesarias de curiosos. Evaluamos previamente la capacidad de compra y preaprobación de hipoteca de cada demandante.',
+      'Evitamos visitas innecesarias de curiosos. Evaluamos previamente la capacidad de pago y preaprobación de hipoteca de cada demandante.',
     icon: ShieldCheck,
   },
   {
-    title: 'Especialistas en herencias y trámites complejos',
+    title: 'Especialistas en herencias y situaciones complejas',
     description:
       'Si la vivienda proviene de una herencia, proindiviso o tiene cargas registrales, nuestro equipo legal y fiscal se encarga de dejar todo regularizado.',
     icon: FileCheck,
@@ -90,7 +84,7 @@ const ADVANTAGES = [
 const FAQS = [
   {
     q: '¿Cuánto tiempo se suele tardar en vender un piso en Gijón?',
-    a: 'Con una valoración adecuada a precios reales de mercado y un buen reportaje fotográfico, el plazo medio de venta en Gijón suele situarse entre 30 y 90 días. Fijar un precio inflado al inicio es el principal motivo por el que muchos inmuebles se estancan.',
+    a: 'Con una valoración adecuada a precios reales de mercado y un reportaje fotográfico profesional, el plazo medio de venta en Gijón suele situarse entre 30 y 90 días. Fijar un precio inflado al inicio es el principal motivo por el que muchos inmuebles se estancan.',
   },
   {
     q: '¿La valoración de mi vivienda tiene algún coste o compromiso?',
@@ -98,11 +92,15 @@ const FAQS = [
   },
   {
     q: '¿Qué ocurre si el inmueble proviene de una herencia con varios herederos?',
-    a: 'Es una de nuestras principales especialidades. Nos encargamos de coordinar la documentación, la aceptación de herencia, el cálculo de la plusvalía municipal y la mediación entre herederos para que la venta se complete de forma ordenada y pacífica.',
+    a: 'Es una de nuestras principales especialidades. Nos encargamos de coordinar la documentación, la aceptación de herencia, el cálculo de la plusvalía municipal y la mediación entre herederos para que la venta se complete de forma ordenada y sin conflictos.',
   },
   {
     q: '¿Qué documentación necesito para poner la vivienda a la venta?',
     a: 'Inicialmente solo requerimos la copia de la escritura de propiedad (o nota simple) y el DNI de los titulares. Nosotros le ayudamos a tramitar el Certificado de Eficiencia Energética, la cédula de habitabilidad y los certificados de comunidad y deuda cero.',
+  },
+  {
+    q: '¿Cómo garantizan que solo visiten mi casa compradores solventes?',
+    a: 'Realizamos un estudio previo de viabilidad financiera y precalificación hipotecaria a través de nuestro departamento financiero antes de concertar cualquier visita a su propiedad.',
   },
 ];
 
@@ -149,7 +147,7 @@ export default function VenderPisoGijonPage() {
           </a>
         </div>
 
-        {/* 4 Pillars beneath buttons */}
+        {/* 3 Pillars beneath buttons */}
         <div className="mt-10 pt-8 border-t border-zinc-300/80 flex flex-wrap items-center justify-center md:justify-start gap-6 sm:gap-8 text-xs sm:text-sm font-semibold text-zinc-900">
           <div className="inline-flex items-center gap-2">
             <CheckCircle2 className="w-4 h-4 text-accent shrink-0" />
@@ -166,19 +164,47 @@ export default function VenderPisoGijonPage() {
         </div>
       </PageHero>
 
-      {/* 2. Step 1: Interactive Valuation Form Section */}
-      <section id="valoracion" className={`${tokens.sectionSpacing} bg-zinc-50 border-b border-zinc-200 scroll-mt-20`}>
+      {/* 2. Step 1: Interactive Valuation Section with Photo Intro */}
+      <section id="valoracion" className={`${tokens.sectionSpacing} bg-white border-b border-zinc-200 scroll-mt-20`}>
         <div className="mx-auto max-w-4xl px-6">
-          <div className="text-center mb-10 lg:mb-12">
-            <span className="text-xs sm:text-sm font-semibold tracking-widest text-zinc-500 uppercase">
-              Paso 1 · Sin compromiso
-            </span>
-            <h2 className="mt-2 text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-zinc-900">
-              Solicite la valoración profesional de su inmueble
-            </h2>
-            <p className="mt-3 text-base sm:text-lg text-zinc-600 max-w-2xl mx-auto leading-relaxed">
-              Complete los datos básicos de su vivienda y nuestros asesores le entregarán un informe personalizado basado en el mercado real de Gijón y Asturias.
-            </p>
+          {/* Top Intro with Image */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center mb-10 lg:mb-12">
+            <div className="lg:col-span-7">
+              <span className="text-xs sm:text-sm font-semibold tracking-widest text-zinc-500 uppercase">
+                Paso 1 · Sin compromiso
+              </span>
+              <h2 className="mt-2 text-3xl sm:text-4xl font-bold tracking-tight text-zinc-900 leading-tight">
+                Solicite la valoración profesional de su inmueble
+              </h2>
+              <p className="mt-3 text-base text-zinc-600 leading-relaxed">
+                Complete los datos básicos de su vivienda y nuestros asesores le entregarán un informe personalizado basado en testigos reales de venta en su zona de Gijón.
+              </p>
+
+              <div className="mt-6 flex flex-wrap gap-3 text-xs sm:text-sm font-semibold text-zinc-800">
+                <div className="flex items-center gap-2 bg-zinc-50 border border-zinc-200 px-3.5 py-2 rounded-xl">
+                  <CheckCircle2 className="w-4 h-4 text-accent" />
+                  <span>100% Gratuito</span>
+                </div>
+                <div className="flex items-center gap-2 bg-zinc-50 border border-zinc-200 px-3.5 py-2 rounded-xl">
+                  <CheckCircle2 className="w-4 h-4 text-accent" />
+                  <span>Respuesta en 24h</span>
+                </div>
+                <div className="flex items-center gap-2 bg-zinc-50 border border-zinc-200 px-3.5 py-2 rounded-xl">
+                  <CheckCircle2 className="w-4 h-4 text-accent" />
+                  <span>Testigos reales</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="lg:col-span-5">
+              <div className="relative aspect-[4/3] rounded-2xl overflow-hidden border border-zinc-200/90 shadow-sm bg-zinc-100">
+                <img
+                  src="/images/valoracion-profesional.webp"
+                  alt="Valoración inmobiliaria profesional en Gijón"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </div>
           </div>
 
           {/* Embed Valuation Form */}
@@ -186,100 +212,117 @@ export default function VenderPisoGijonPage() {
         </div>
       </section>
 
-      {/* 3. The 4 Steps Method */}
-      <section className={`${tokens.sectionSpacing} bg-white border-b border-zinc-200`}>
+      {/* 3. The 4 Cards Method (with individual generated photographs) */}
+      <section className={`${tokens.sectionSpacing} bg-zinc-50 border-b border-zinc-200`}>
         <div className={tokens.container}>
           <div className="max-w-3xl mb-12 lg:mb-16">
             <span className="text-xs sm:text-sm font-semibold tracking-widest text-zinc-500 uppercase">
               El Método HuNo
             </span>
             <h2 className="mt-2 text-3xl sm:text-4xl font-bold tracking-tight text-zinc-900">
-              Cómo vendemos su vivienda en 4 pasos
+              Cómo vendemos su vivienda
             </h2>
-            <p className="mt-4 text-base sm:text-lg text-zinc-600 leading-relaxed">
-              Un sistema transparente, riguroso y probado durante más de dos décadas en Gijón, diseñado para vender al mejor precio y evitar dolores de cabeza.
+            <p className="mt-3 text-base sm:text-lg text-zinc-600 leading-relaxed">
+              Un sistema probado durante más de dos décadas en Gijón, diseñado para conseguir el mejor precio de mercado y evitar pérdidas de tiempo.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
-            {STEPS.map((step) => {
-              const Icon = step.icon;
-              return (
-                <div
-                  key={step.step}
-                  className="p-6 sm:p-7 rounded-2xl bg-zinc-50 border border-zinc-200/90 flex flex-col justify-between hover:border-zinc-300 hover:shadow-xs transition-all duration-150"
-                >
+            {CARDS.map((card) => (
+              <div
+                key={card.title}
+                className="group flex flex-col bg-white border border-zinc-200/90 rounded-2xl overflow-hidden hover:border-zinc-300 hover:shadow-md transition-all duration-300"
+              >
+                {/* Photo Header */}
+                <div className="relative aspect-[16/10] w-full overflow-hidden bg-zinc-100">
+                  <img
+                    src={card.image}
+                    alt={card.title}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    loading="lazy"
+                  />
+                </div>
+
+                {/* Body */}
+                <div className="p-6 flex-1 flex flex-col justify-between">
                   <div>
-                    <div className="flex items-center justify-between mb-5">
-                      <span className="text-2xl font-black text-accent font-mono tracking-tight">
-                        {step.step}
-                      </span>
-                      <div className="w-10 h-10 rounded-xl bg-white border border-zinc-200 flex items-center justify-center text-accent shadow-2xs">
-                        <Icon className="w-5 h-5" aria-hidden="true" />
-                      </div>
-                    </div>
-                    <h3 className="text-lg font-bold text-zinc-950 mb-2 leading-snug">
-                      {step.title}
+                    <h3 className="text-lg font-bold text-zinc-950 group-hover:text-accent transition-colors leading-snug">
+                      {card.title}
                     </h3>
-                    <p className="text-sm text-zinc-600 leading-relaxed">
-                      {step.description}
+                    <p className="mt-2.5 text-sm text-zinc-600 leading-relaxed">
+                      {card.description}
                     </p>
                   </div>
                 </div>
-              );
-            })}
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* 4. Why Sell with HuNo vs Other Agencies */}
-      <section className={`${tokens.sectionSpacing} bg-zinc-50 border-b border-zinc-200`}>
+      {/* 4. Differentiators: 2-Column with large image on right */}
+      <section className={`${tokens.sectionSpacing} bg-white border-b border-zinc-200`}>
         <div className={tokens.container}>
-          <div className="max-w-3xl mb-12 lg:mb-16">
-            <span className="text-xs sm:text-sm font-semibold tracking-widest text-zinc-500 uppercase">
-              Diferenciales
-            </span>
-            <h2 className="mt-2 text-3xl sm:text-4xl font-bold tracking-tight text-zinc-900">
-              Por qué los propietarios eligen HuNo Grupo Inmobiliario
-            </h2>
-            <p className="mt-4 text-base sm:text-lg text-zinc-600 leading-relaxed">
-              La diferencia entre vender con tranquilidad o sufrir meses de incertidumbre está en la experiencia, la cercanía y el rigor legal.
-            </p>
-          </div>
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+            {/* Left Column: 4 key advantages */}
+            <div className="lg:col-span-7">
+              <span className="text-xs sm:text-sm font-semibold tracking-widest text-zinc-500 uppercase">
+                Por qué elegir HuNo
+              </span>
+              <h2 className="mt-2 text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-zinc-900 leading-tight">
+                La tranquilidad de vender <span className="text-accent">con expertos</span>
+              </h2>
+              <p className="mt-4 text-base sm:text-lg text-zinc-600 leading-relaxed">
+                La diferencia entre vender con éxito o sufrir meses de incertidumbre está en el rigor legal, el filtro de compradores y la atención personalizada de la gerencia.
+              </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
-            {ADVANTAGES.map((adv) => {
-              const Icon = adv.icon;
-              return (
-                <div
-                  key={adv.title}
-                  className="p-7 sm:p-8 rounded-2xl bg-white border border-zinc-200/90 shadow-2xs flex items-start gap-5 hover:border-zinc-300 transition-colors"
-                >
-                  <div className="w-12 h-12 rounded-xl bg-red-50 text-accent flex items-center justify-center shrink-0 shadow-2xs mt-0.5">
-                    <Icon className="w-6 h-6" aria-hidden="true" />
-                  </div>
-                  <div>
-                    <h3 className="text-lg sm:text-xl font-bold text-zinc-950">
-                      {adv.title}
-                    </h3>
-                    <p className="mt-2 text-sm sm:text-base text-zinc-600 leading-relaxed">
-                      {adv.description}
-                    </p>
-                  </div>
-                </div>
-              );
-            })}
+              <div className="mt-8 space-y-4">
+                {ADVANTAGES.map((adv) => {
+                  const Icon = adv.icon;
+                  return (
+                    <div
+                      key={adv.title}
+                      className="p-5 sm:p-6 rounded-2xl bg-zinc-50 border border-zinc-200/90 flex items-start gap-4 hover:border-zinc-300 transition-colors"
+                    >
+                      <div className="w-10 h-10 rounded-xl bg-white border border-zinc-200 flex items-center justify-center text-accent shrink-0 shadow-2xs mt-0.5">
+                        <Icon className="w-5 h-5" aria-hidden="true" />
+                      </div>
+                      <div>
+                        <h3 className="text-base sm:text-lg font-bold text-zinc-950">
+                          {adv.title}
+                        </h3>
+                        <p className="mt-1 text-sm text-zinc-600 leading-relaxed">
+                          {adv.description}
+                        </p>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+
+            {/* Right Column: Architectural Photography */}
+            <div className="lg:col-span-5">
+              <div className="relative aspect-[4/5] w-full overflow-hidden rounded-2xl shadow-sm border border-zinc-200/90 bg-zinc-100">
+                <img
+                  src="/images/oferta-inmobiliaria.webp"
+                  alt="Venta de inmuebles con HuNo en Asturias"
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                />
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
       {/* 5. Direct Agent / Trust Card: Natalia Arto */}
-      <section className={`${tokens.sectionSpacing} bg-white border-b border-zinc-200`}>
+      <section className={`${tokens.sectionSpacing} bg-zinc-50 border-b border-zinc-200`}>
         <div className="mx-auto max-w-4xl px-6">
-          <div className="bg-zinc-50 border border-zinc-200 rounded-3xl p-8 sm:p-10 lg:p-12 shadow-xs">
+          <div className="bg-white border border-zinc-200 rounded-3xl p-8 sm:p-10 lg:p-12 shadow-xs">
             <div className="flex flex-col sm:flex-row items-center sm:items-start gap-6 sm:gap-8 text-center sm:text-left">
               {/* Agent Photo */}
-              <div className="w-24 h-24 sm:w-28 sm:sm:h-28 rounded-full overflow-hidden border-2 border-accent/30 shadow-md shrink-0 bg-white">
+              <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-full overflow-hidden border-2 border-accent/30 shadow-md shrink-0 bg-zinc-100">
                 <img
                   src="/NataliaArto.jpg"
                   alt="Natalia Arto - Gerencia HuNo Grupo Inmobiliario"
@@ -299,7 +342,7 @@ export default function VenderPisoGijonPage() {
                   &ldquo;Vender una propiedad es una de las decisiones más importantes de su vida. Mi compromiso personal es asesorarle con la máxima honestidad y rigor, protegiendo su patrimonio como si fuera el mío propio.&rdquo;
                 </blockquote>
 
-                <div className="mt-6 flex flex-wrap items-center justify-center sm:justify-start gap-4 pt-4 border-t border-zinc-200">
+                <div className="mt-6 flex flex-wrap items-center justify-center sm:justify-start gap-4 pt-4 border-t border-zinc-100">
                   <a
                     href="tel:678530312"
                     className="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-semibold text-white bg-accent hover:bg-accent-hover rounded-xl shadow-xs transition-colors"
@@ -324,40 +367,70 @@ export default function VenderPisoGijonPage() {
         </div>
       </section>
 
-      {/* 6. FAQ Section */}
-      <section className={`${tokens.sectionSpacing} bg-zinc-50 border-b border-zinc-200`}>
-        <div className="mx-auto max-w-4xl px-6">
-          <div className="text-center mb-12">
-            <span className="text-xs sm:text-sm font-semibold tracking-widest text-zinc-500 uppercase">
-              Dudas Comunes
-            </span>
-            <h2 className="mt-2 text-3xl sm:text-4xl font-bold tracking-tight text-zinc-900">
-              Preguntas frecuentes de propietarios
-            </h2>
-            <p className="mt-3 text-base text-zinc-600 max-w-xl mx-auto">
-              Todo lo que necesita saber antes de poner su piso a la venta en Gijón.
-            </p>
-          </div>
-
-          <div className="space-y-4">
-            {FAQS.map((faq, index) => (
-              <div
-                key={index}
-                className="p-6 sm:p-7 rounded-2xl bg-white border border-zinc-200/90 shadow-2xs"
-              >
-                <div className="flex items-start gap-3.5">
-                  <HelpCircle className="w-5 h-5 text-accent shrink-0 mt-0.5" />
-                  <div>
-                    <h3 className="text-base sm:text-lg font-bold text-zinc-950">
-                      {faq.q}
-                    </h3>
-                    <p className="mt-2 text-sm sm:text-base text-zinc-600 leading-relaxed">
-                      {faq.a}
-                    </p>
-                  </div>
-                </div>
+      {/* 6. FAQ Section: 2-Column with image & collapsible accordion */}
+      <section className={`${tokens.sectionSpacing} bg-white border-b border-zinc-200`}>
+        <div className={tokens.container}>
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
+            {/* Left Column: Heading, help card, and agency image */}
+            <div className="lg:col-span-5 space-y-6">
+              <div>
+                <span className="text-xs sm:text-sm font-semibold tracking-widest text-zinc-500 uppercase">
+                  Dudas Comunes
+                </span>
+                <h2 className="mt-2 text-3xl sm:text-4xl font-bold tracking-tight text-zinc-900 leading-tight">
+                  Preguntas frecuentes de propietarios
+                </h2>
+                <p className="mt-3 text-base text-zinc-600 leading-relaxed">
+                  Todo lo que necesita saber antes de poner su piso o casa a la venta en Gijón. Transparencia absoluta desde el primer día.
+                </p>
               </div>
-            ))}
+
+              {/* Photo of agency consultation */}
+              <div className="relative aspect-[4/3] rounded-2xl overflow-hidden border border-zinc-200/90 shadow-sm bg-zinc-100">
+                <img
+                  src="/images/nosotros-agencia.webp"
+                  alt="Asesoramiento inmobiliario en Gijón"
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                />
+              </div>
+
+              {/* Quick direct assistance card */}
+              <div className="p-6 rounded-2xl bg-zinc-50 border border-zinc-200/90 shadow-2xs flex items-center justify-between gap-4">
+                <div>
+                  <p className="text-sm font-bold text-zinc-900">¿Tiene alguna duda específica?</p>
+                  <p className="text-xs text-zinc-500 mt-0.5">Llámenos sin compromiso</p>
+                </div>
+                <a
+                  href="tel:678530312"
+                  className="inline-flex items-center gap-1.5 px-4 py-2.5 text-xs font-semibold text-white bg-accent hover:bg-accent-hover rounded-xl shadow-2xs transition-colors shrink-0"
+                >
+                  <Phone className="w-3.5 h-3.5" />
+                  <span>678 53 03 12</span>
+                </a>
+              </div>
+            </div>
+
+            {/* Right Column: Clean Collapsible Accordion */}
+            <div className="lg:col-span-7 space-y-3.5">
+              {FAQS.map((faq, index) => (
+                <details
+                  key={index}
+                  className="group rounded-2xl border border-zinc-200/90 bg-white overflow-hidden transition-all duration-200 open:shadow-xs open:border-zinc-300"
+                  open={index === 0}
+                >
+                  <summary className="flex items-center justify-between p-5 sm:p-6 cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden text-base sm:text-lg font-bold text-zinc-950 group-hover:text-accent transition-colors">
+                    <span className="pr-4">{faq.q}</span>
+                    <div className="w-8 h-8 rounded-lg bg-zinc-50 border border-zinc-200 flex items-center justify-center shrink-0 group-open:bg-red-50 group-open:border-red-200 transition-colors">
+                      <ChevronDown className="w-4 h-4 text-zinc-500 group-open:text-accent group-open:rotate-180 transition-transform duration-200" />
+                    </div>
+                  </summary>
+                  <div className="px-5 sm:px-6 pb-6 pt-1 text-sm sm:text-base text-zinc-600 leading-relaxed border-t border-zinc-100">
+                    {faq.a}
+                  </div>
+                </details>
+              ))}
+            </div>
           </div>
         </div>
       </section>
