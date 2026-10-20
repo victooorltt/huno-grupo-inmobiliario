@@ -111,13 +111,13 @@ export function Navbar() {
 
             <Link
               href="/vender-piso-gijon/"
-              className={`px-3 py-2 text-sm font-semibold transition-colors duration-150 ${
+              className={`px-3 py-2 text-sm font-medium transition-colors duration-150 ${
                 pathname === '/vender-piso-gijon/' || pathname === '/vender-piso-gijon'
-                  ? 'text-[#FF0000] font-bold'
-                  : 'text-zinc-950 hover:text-[#FF0000]'
+                  ? 'text-[#FF0000] font-semibold'
+                  : 'text-zinc-700 hover:text-zinc-900'
               }`}
             >
-              Vender Inmueble
+              Vender
             </Link>
 
             {/* Servicios Dropdown */}
@@ -254,13 +254,13 @@ export function Navbar() {
           <Link
             href="/vender-piso-gijon/"
             onClick={() => setMobileMenuOpen(false)}
-            className={`block py-2 text-base font-semibold ${
+            className={`block py-2 text-base font-medium ${
               pathname === '/vender-piso-gijon/' || pathname === '/vender-piso-gijon'
-                ? 'text-[#FF0000]'
-                : 'text-zinc-950'
+                ? 'text-[#FF0000] font-semibold'
+                : 'text-zinc-800'
             }`}
           >
-            Vender Inmueble
+            Vender
           </Link>
 
           {/* Mobile Servicios Accordion */}

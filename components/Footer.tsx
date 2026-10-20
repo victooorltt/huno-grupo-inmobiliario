@@ -74,9 +74,9 @@ export function Footer() {
               <li>
                 <Link
                   href="/vender-piso-gijon/"
-                  className="text-accent font-semibold hover:text-[#d90000] transition-colors duration-150"
+                  className="hover:text-zinc-900 transition-colors duration-150"
                 >
-                  Vender piso en Gijón →
+                  Vender piso en Gijón
                 </Link>
               </li>
               <li>
