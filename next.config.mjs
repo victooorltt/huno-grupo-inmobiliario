@@ -11,6 +11,11 @@ const nextConfig = {
         destination: '/servicios/servicios-al-propietario/',
         permanent: false,
       },
+      {
+        source: '/vender',
+        destination: '/vender-piso-gijon/',
+        permanent: false,
+      },
     ];
   },
 };
