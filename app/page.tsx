@@ -176,23 +176,23 @@ export default function HomePage() {
           </Link>
         </div>
 
-        {/* Benefits row centered beneath buttons */}
-        <div className="mt-10 pt-8 border-t border-zinc-300 max-w-2xl mx-auto flex flex-wrap items-center justify-center gap-6 sm:gap-8 text-sm font-semibold text-zinc-900">
-          <div className="inline-flex items-center gap-2">
+        {/* Benefits: 2 lines on mobile (2x2 grid), 1 single line on desktop */}
+        <div className="mt-10 pt-8 border-t border-zinc-300 max-w-3xl mx-auto grid grid-cols-2 md:flex md:flex-nowrap md:items-center md:justify-center gap-x-4 gap-y-3 sm:gap-x-6 md:gap-x-8 lg:gap-10 text-xs sm:text-sm font-semibold text-zinc-900">
+          <div className="inline-flex items-center justify-center gap-2 whitespace-nowrap">
             <TrendingUp className="w-4 h-4 text-accent shrink-0" aria-hidden="true" />
-            <span>Valoración Gratuita</span>
+            <span>Valoración gratuita</span>
           </div>
-          <div className="inline-flex items-center gap-2">
+          <div className="inline-flex items-center justify-center gap-2 whitespace-nowrap">
             <ShieldCheck className="w-4 h-4 text-accent shrink-0" aria-hidden="true" />
-            <span>Gestión Legal y Herencias</span>
+            <span>Gestión legal</span>
           </div>
-          <div className="inline-flex items-center gap-2">
+          <div className="inline-flex items-center justify-center gap-2 whitespace-nowrap">
             <KeyRound className="w-4 h-4 text-accent shrink-0" aria-hidden="true" />
-            <span>Filtro de Compradores</span>
+            <span>Filtro de compradores</span>
           </div>
-          <div className="inline-flex items-center gap-2">
+          <div className="inline-flex items-center justify-center gap-2 whitespace-nowrap">
             <Award className="w-4 h-4 text-accent shrink-0" aria-hidden="true" />
-            <span>+20 Años en Gijón</span>
+            <span>+20 años en Gijón</span>
           </div>
         </div>
       </PageHero>
