@@ -1,7 +1,7 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import {
   MapPin,
-  Home,
   ShieldCheck,
   Award,
   ArrowRight,
@@ -14,91 +14,99 @@ import {
   Square,
   Star,
   Building2,
+  Calculator,
+  CheckCircle2,
 } from 'lucide-react';
 import { PageHero } from '@/components/PageHero';
 import { ContactCTA } from '@/components/ContactCTA';
 import { tokens } from '@/lib/tokens';
 import { PROPERTIES } from '@/lib/properties';
 
+export const metadata: Metadata = {
+  title: 'Vender Piso en Gijón | HuNo Grupo Inmobiliario - Venta y Valoración',
+  description:
+    '¿Desea vender su vivienda en Gijón o Asturias? En HuNo Grupo Inmobiliario le garantizamos valoración profesional gratuita, filtro de compradores solventes y gestión legal completa.',
+};
+
 const SERVICES = [
   {
-    title: 'Servicios al Propietario',
+    title: 'Gestión Integral de Venta',
     description:
-      'Acompañamiento integral en la venta y alquiler de su inmueble con máxima difusión, filtros de solvencia y gestión completa de visitas y documentación.',
+      'Acompañamiento completo en la comercialización de su inmueble: reportaje fotográfico profesional, publicación en portales y filtro riguroso de visitas.',
     href: '/servicios/servicios-al-propietario/',
     icon: KeyRound,
     image: '/images/servicio-propietario-card.webp',
   },
   {
-    title: 'Valoraciones Inmobiliarias',
+    title: 'Valoración Real de Mercado',
     description:
-      'Estudio riguroso del mercado actual para fijar el precio óptimo y maximizar la rentabilidad de su inmueble con criterio técnico y realista.',
+      'Estudio riguroso y gratuito basado en testigos de venta reales en Gijón para fijar el precio óptimo sin perder dinero ni estancar la venta.',
     href: '/servicios/valoracion-profesional/',
     icon: TrendingUp,
     image: '/images/servicio-valoracion-card.webp',
   },
   {
-    title: 'Tramitación de Herencia',
+    title: 'Herencias y Asesoramiento Legal',
     description:
-      'Asesoramiento especializado en la gestión y tramitación de herencias y sucesiones inmobiliarias, facilitando todos los trámites legales y fiscales.',
+      'Resolución especializada de herencias, plusvalías municipales, notas simples y cargas registrales para una transmisión segura y sin demoras.',
     href: '/servicios/servicios-al-propietario/',
     icon: FileText,
     image: '/images/servicio-herencia-card.webp',
   },
   {
-    title: 'Seguros de Impagos',
+    title: 'Filtro de Compradores Solventes',
     description:
-      'Protección y tranquilidad para el alquiler de su propiedad con cobertura jurídica completa y garantía en el cobro de rentas.',
-    href: '/servicios/servicios-al-propietario/',
-    icon: ShieldCheck,
-    image: '/images/servicio-seguros-card.webp',
-  },
-  {
-    title: 'Gestiones de Hipotecas',
-    description:
-      'Asesoramiento financiero a medida para conseguir las mejores condiciones hipotecarias con entidades bancarias de primer nivel.',
+      'Estudiamos la viabilidad financiera e hipotecaria de cada interesado antes de concertar visitas, garantizando únicamente compradores reales.',
     href: '/servicios/asesoramiento-financiero/',
     icon: Landmark,
     image: '/images/servicio-hipotecas-card.webp',
   },
+  {
+    title: 'Asesoramiento y Puesta a Punto',
+    description:
+      'Equipo técnico propio para presupuestos de reforma, certificados energéticos y asesoramiento para maximizar el valor de su propiedad.',
+    href: '/servicios/servicio-de-reformas/',
+    icon: ShieldCheck,
+    image: '/images/servicio-reformas.webp',
+  },
 ];
 
-const EDITORIAL_OFFERS = [
+const SELLER_GUARANTEES = [
   {
-    title: 'Venta de Inmuebles',
+    title: 'Atención Directa con Natalia Arto',
     description:
-      'Descubra nuestra oferta inmobiliaria de pisos, casas, fincas y locales, si no encuentra lo que desea llámenos.',
+      'Interlocución cercana y personalizada con la gerencia de la agencia. Un único asesor dedicado a su inmueble de principio a fin.',
+    icon: Award,
+  },
+  {
+    title: 'Máxima Difusión Comercial',
+    description:
+      'Posicionamiento prioritario en los principales portales inmobiliarios y cruce directo con nuestra base de datos de compradores activos.',
     icon: Building2,
   },
   {
-    title: 'Alquiler de Inmuebles',
+    title: 'Seguridad Jurídica y Documental',
     description:
-      'Le ofrecemos pisos, casas, fincas y locales de calidad de larga y media temporada adaptado a sus necesidades.',
-    icon: KeyRound,
-  },
-  {
-    title: 'Viviendas',
-    description:
-      'HuNo Grupo Inmobiliario tenemos la vivienda de sus sueños, adaptada a sus necesidades y en las mejores zonas.',
-    icon: Home,
+      'Redacción exhaustiva de contratos de arras, coordinación notarial y resolución de todos los trámites legales hasta la firma definitiva.',
+    icon: ShieldCheck,
   },
 ];
 
 const REVIEWS = [
   {
-    author: 'Marian PF',
-    rating: 5,
-    text: 'No podemos estar más agradecidas por el trato y la profesionalidad recibida. Todo el proceso fue ágil, claro y perfectamente organizado. Han superado nuestras expectativas y los recomendamos al 100%. ¡Gracias equipo!',
-  },
-  {
-    author: 'Amador Gomez',
-    rating: 5,
-    text: 'Un auténtico placer haber sido cliente suyo. Un asesoramiento excepcional, cercano y profesional, acompañandonos en todo el proceso. Muchas Gracias tanto a Javi como a Natalia. Ha sido un placer',
-  },
-  {
     author: 'Arturo Enamorado',
     rating: 5,
-    text: 'Seriedad, eficacia, asesorando en todos los aspectos y un trato excelente. Contando las cosas como son y con claridad. Fue la mejor decisión q tomé al poner mi propiedad en sus manos. Muchas gracias Hugo y Natalia!',
+    text: 'Seriedad, eficacia, asesorando en todos los aspectos y un trato excelente. Contando las cosas como son y con claridad. Fue la mejor decisión que tomé al poner mi propiedad en sus manos. ¡Muchas gracias Hugo y Natalia!',
+  },
+  {
+    author: 'Amador Gómez',
+    rating: 5,
+    text: 'Un auténtico placer haber sido cliente suyo. Un asesoramiento excepcional, cercano y profesional, acompañándonos en todo el proceso de venta. Muchas gracias tanto a Javi como a Natalia.',
+  },
+  {
+    author: 'Marian PF',
+    rating: 5,
+    text: 'No podemos estar más agradecidas por el trato y la profesionalidad recibida. Todo el proceso fue ágil, claro y perfectamente organizado. Han superado nuestras expectativas y los recomendamos al 100%.',
   },
 ];
 
@@ -111,7 +119,7 @@ const FEATURED_PROPERTIES = [
 export default function HomePage() {
   return (
     <div>
-      {/* 1. Hero Block */}
+      {/* 1. Hero Block: Enfoque Propietario / Venta */}
       <PageHero
         variant="overlay"
         imageSrc="/images/hero-home.webp"
@@ -134,69 +142,73 @@ export default function HomePage() {
         title={
           <span className="flex flex-col items-center">
             <span className="text-xs sm:text-sm font-semibold tracking-widest text-zinc-600 uppercase mb-3">
-              HuNo Grupo Inmobiliario
+              HuNo Grupo Inmobiliario · Especialistas en Venta
             </span>
             <span className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-zinc-950 leading-[1.14]">
-              Tu inmobiliaria de{' '}
+              Venda su vivienda en Gijón{' '}
               <br className="hidden sm:inline" />
-              <span className="text-accent">confianza en Gijón</span>
+              <span className="text-accent">al mejor precio de mercado</span>
             </span>
           </span>
         }
         subtitle={
           <span>
-            Te acompañamos en la venta o alquiler de tu inmueble en Gijón,{' '}
+            Acompañamos a propietarios en todo el proceso: valoración real y rigurosa,{' '}
             <br className="hidden md:inline" />
-            ofreciéndote un servicio cercano, personalizado y profesional en cada paso.
+            filtro de compradores solventes y gestión legal y fiscal completa sin sorpresas.
           </span>
         }
       >
         <div className="flex flex-wrap items-center justify-center gap-4">
           <Link
-            href="/inmuebles/"
+            href="/servicios/valoracion-profesional/"
             className="inline-flex items-center justify-center gap-2 px-6 py-3.5 text-base font-semibold text-white bg-accent hover:bg-accent-hover rounded-xl shadow-xs transition-colors duration-150"
           >
-            <span>Ver inmuebles</span>
+            <Calculator className="w-4 h-4" aria-hidden="true" />
+            <span>Solicitar valoración gratuita</span>
             <ArrowRight className="w-4 h-4" aria-hidden="true" />
           </Link>
           <Link
-            href="/contacto/"
+            href="/servicios/servicios-al-propietario/"
             className="inline-flex items-center justify-center px-6 py-3.5 text-base font-semibold text-zinc-900 bg-white/95 hover:bg-white border border-zinc-300 hover:border-zinc-400 rounded-xl transition-colors duration-150 shadow-xs"
           >
-            <span>Contactar</span>
+            <span>Cómo vendemos su inmueble</span>
           </Link>
         </div>
 
-        {/* Benefits row centered beneath buttons with improved contrast */}
-        <div className="mt-10 pt-8 border-t border-zinc-300 max-w-xl mx-auto flex flex-wrap items-center justify-center gap-6 sm:gap-10 text-sm font-semibold text-zinc-900">
+        {/* Benefits row centered beneath buttons */}
+        <div className="mt-10 pt-8 border-t border-zinc-300 max-w-2xl mx-auto flex flex-wrap items-center justify-center gap-6 sm:gap-8 text-sm font-semibold text-zinc-900">
           <div className="inline-flex items-center gap-2">
-            <MapPin className="w-4 h-4 text-accent shrink-0" aria-hidden="true" />
-            <span>Gijón</span>
-          </div>
-          <div className="inline-flex items-center gap-2">
-            <Home className="w-4 h-4 text-accent shrink-0" aria-hidden="true" />
-            <span>Venta &amp; Alquiler</span>
+            <TrendingUp className="w-4 h-4 text-accent shrink-0" aria-hidden="true" />
+            <span>Valoración Gratuita</span>
           </div>
           <div className="inline-flex items-center gap-2">
             <ShieldCheck className="w-4 h-4 text-accent shrink-0" aria-hidden="true" />
-            <span>Gestión Legal</span>
+            <span>Gestión Legal y Herencias</span>
+          </div>
+          <div className="inline-flex items-center gap-2">
+            <KeyRound className="w-4 h-4 text-accent shrink-0" aria-hidden="true" />
+            <span>Filtro de Compradores</span>
           </div>
           <div className="inline-flex items-center gap-2">
             <Award className="w-4 h-4 text-accent shrink-0" aria-hidden="true" />
-            <span>Asesoramiento</span>
+            <span>+20 Años en Gijón</span>
           </div>
         </div>
       </PageHero>
 
-      {/* 2. Block 2: Nuestros Servicios */}
+      {/* 2. Block 2: Garantías y Servicios para el Propietario */}
       <section className={`${tokens.sectionSpacing} bg-white border-b border-zinc-200`}>
         <div className={tokens.container}>
           <div className="max-w-3xl mb-12 lg:mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-zinc-900">
-              HuNo Grupo Inmobiliario le asesora y le acompaña
+            <span className="text-xs sm:text-sm font-semibold tracking-widest text-zinc-500 uppercase">
+              Compromiso con el vendedor
+            </span>
+            <h2 className="mt-2 text-3xl sm:text-4xl font-bold tracking-tight text-zinc-900">
+              Las garantías de vender con HuNo Grupo Inmobiliario
             </h2>
             <p className="mt-4 text-base sm:text-lg text-zinc-600 leading-relaxed">
-              Servicios profesionales y de calidad, sin letra pequeña, tanto para propietarios como para demandantes. Gran oferta de pisos, casas, fincas y locales.
+              Vender una vivienda es una de las decisiones patrimoniales más importantes. Le ofrecemos seguridad jurídica, rigor comercial y cercanía en cada fase.
             </p>
           </div>
 
@@ -238,23 +250,97 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 3. Block 3: Inmuebles Destacados */}
+      {/* 3. Block 3: Venda seguro y con total tranquilidad (Editorial) */}
+      <section className={`${tokens.sectionSpacing} bg-white border-b border-zinc-200`}>
+        <div className={tokens.container}>
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+            {/* Left Column: Headline, 3 points, single CTA */}
+            <div className="lg:col-span-7 flex flex-col justify-between">
+              <div>
+                <span className="text-xs sm:text-sm font-semibold tracking-widest text-zinc-500 uppercase">
+                  HuNo Grupo Inmobiliario · Propietarios
+                </span>
+                <h2 className="mt-2 text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-zinc-950 leading-tight">
+                  Venda seguro y con <span className="text-accent">total tranquilidad</span>
+                </h2>
+                <p className="mt-4 text-base sm:text-lg text-zinc-600 leading-relaxed max-w-xl">
+                  Un método de trabajo probado durante más de dos décadas en Asturias, enfocado en maximizar el valor de su vivienda y proteger sus intereses en cada firma.
+                </p>
+
+                {/* The 3 Guarantee Points */}
+                <div className="mt-8 space-y-3.5">
+                  {SELLER_GUARANTEES.map((guarantee) => {
+                    const Icon = guarantee.icon;
+                    return (
+                      <div
+                        key={guarantee.title}
+                        className="p-4 sm:p-5 rounded-2xl bg-zinc-50 border border-zinc-200/80 flex items-start gap-4 hover:border-zinc-300 transition-colors"
+                      >
+                        <div className="w-10 h-10 rounded-xl bg-white border border-zinc-200 flex items-center justify-center text-accent shrink-0 shadow-2xs mt-0.5">
+                          <Icon className="w-5 h-5" aria-hidden="true" />
+                        </div>
+                        <div>
+                          <h3 className="text-base sm:text-lg font-bold text-zinc-950">
+                            {guarantee.title}
+                          </h3>
+                          <p className="mt-1 text-sm text-zinc-600 leading-relaxed">
+                            {guarantee.description}
+                          </p>
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+
+              {/* Central Action Link */}
+              <div className="mt-8">
+                <Link
+                  href="/servicios/valoracion-profesional/"
+                  className="inline-flex items-center justify-center gap-2.5 px-8 py-4 text-base font-semibold text-white bg-accent hover:bg-accent-hover rounded-xl shadow-xs hover:shadow-md transition-all duration-150 w-full sm:w-auto"
+                >
+                  <Calculator className="w-5 h-5" aria-hidden="true" />
+                  <span>Solicitar valoración de mi vivienda</span>
+                  <ArrowRight className="w-5 h-5" aria-hidden="true" />
+                </Link>
+              </div>
+            </div>
+
+            {/* Right Column: Architectural Photography */}
+            <div className="lg:col-span-5">
+              <div className="relative aspect-[4/3] lg:aspect-[4/5] w-full overflow-hidden rounded-2xl shadow-sm border border-zinc-200/90">
+                <img
+                  src="/images/oferta-inmobiliaria.webp"
+                  alt="Gestión inmobiliaria profesional HuNo en Asturias"
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 4. Block 4: Inmuebles Destacados reenfocados a Calidad de Presentación */}
       <section className={`${tokens.sectionSpacing} bg-zinc-50 border-b border-zinc-200`}>
         <div className={tokens.container}>
           <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-10 lg:mb-12">
             <div>
-              <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-zinc-900">
-                Inmuebles Destacados
+              <span className="text-xs sm:text-sm font-semibold tracking-widest text-zinc-500 uppercase">
+                Marketing Inmobiliario
+              </span>
+              <h2 className="mt-1 text-3xl sm:text-4xl font-bold tracking-tight text-zinc-900">
+                La calidad con la que presentamos cada propiedad
               </h2>
-              <p className="mt-2 text-base text-zinc-600">
-                Selección de propiedades en Gijón y Asturias con total transparencia y garantía.
+              <p className="mt-2 text-base text-zinc-600 max-w-2xl">
+                Cuidamos la imagen, el reportaje fotográfico y los detalles descriptivos para que su vivienda destaque frente a la competencia y atraiga a compradores serios.
               </p>
             </div>
             <Link
               href="/inmuebles/"
-              className="inline-flex items-center gap-2 text-sm font-semibold text-zinc-900 hover:text-accent transition-colors"
+              className="inline-flex items-center gap-2 text-sm font-semibold text-zinc-900 hover:text-accent transition-colors shrink-0"
             >
-              <span>Ver todos los inmuebles</span>
+              <span>Ver catálogo de inmuebles</span>
               <ArrowRight className="w-4 h-4" aria-hidden="true" />
             </Link>
           </div>
@@ -331,82 +417,15 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 4. Block 4: Nuestra Oferta Inmobiliaria */}
+      {/* 5. Block 5: Opiniones de propietarios y clientes */}
       <section className={`${tokens.sectionSpacing} bg-white border-b border-zinc-200`}>
         <div className={tokens.container}>
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
-            {/* Left Column: Headline, 3 points, single CTA */}
-            <div className="lg:col-span-7 flex flex-col justify-between">
-              <div>
-                <span className="text-xs sm:text-sm font-semibold tracking-widest text-zinc-500 uppercase">
-                  HuNo Grupo Inmobiliario
-                </span>
-                <h2 className="mt-2 text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-zinc-950 leading-tight">
-                  Nuestra Oferta <span className="text-accent">Inmobiliaria</span>
-                </h2>
-                <p className="mt-4 text-base sm:text-lg text-zinc-600 leading-relaxed max-w-xl">
-                  Gran oferta inmobiliaria de pisos, casas, fincas y locales. Le asesoramos en todas las fases de compra, con garantía y profesionalidad.
-                </p>
-
-                {/* The 3 Offer Points */}
-                <div className="mt-8 space-y-3.5">
-                  {EDITORIAL_OFFERS.map((offer) => {
-                    const Icon = offer.icon;
-                    return (
-                      <div
-                        key={offer.title}
-                        className="p-4 sm:p-5 rounded-2xl bg-zinc-50 border border-zinc-200/80 flex items-start gap-4 hover:border-zinc-300 transition-colors"
-                      >
-                        <div className="w-10 h-10 rounded-xl bg-white border border-zinc-200 flex items-center justify-center text-accent shrink-0 shadow-2xs mt-0.5">
-                          <Icon className="w-5 h-5" aria-hidden="true" />
-                        </div>
-                        <div>
-                          <h3 className="text-base sm:text-lg font-bold text-zinc-950">
-                            {offer.title}
-                          </h3>
-                          <p className="mt-1 text-sm text-zinc-600 leading-relaxed">
-                            {offer.description}
-                          </p>
-                        </div>
-                      </div>
-                    );
-                  })}
-                </div>
-              </div>
-
-              {/* Single Central Action Link */}
-              <div className="mt-8">
-                <Link
-                  href="/inmuebles/"
-                  className="inline-flex items-center justify-center gap-2.5 px-8 py-4 text-base font-semibold text-white bg-accent hover:bg-accent-hover rounded-xl shadow-xs hover:shadow-md transition-all duration-150 w-full sm:w-auto"
-                >
-                  <span>Descubra nuestros inmuebles</span>
-                  <ArrowRight className="w-5 h-5" aria-hidden="true" />
-                </Link>
-              </div>
-            </div>
-
-            {/* Right Column: Architectural Photography */}
-            <div className="lg:col-span-5">
-              <div className="relative aspect-[4/3] lg:aspect-[4/5] w-full overflow-hidden rounded-2xl shadow-sm border border-zinc-200/90">
-                <img
-                  src="/images/oferta-inmobiliaria.webp"
-                  alt="Oferta inmobiliaria HuNo en Asturias"
-                  className="w-full h-full object-cover"
-                  loading="lazy"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 5. Block 5: Opiniones de nuestros clientes */}
-      <section className={`${tokens.sectionSpacing} bg-zinc-50 border-b border-zinc-200`}>
-        <div className={tokens.container}>
           <div className="max-w-3xl mb-12 lg:mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-zinc-900">
-              Opiniones de nuestros clientes
+            <span className="text-xs sm:text-sm font-semibold tracking-widest text-zinc-500 uppercase">
+              Casos Reales
+            </span>
+            <h2 className="mt-1 text-3xl sm:text-4xl font-bold tracking-tight text-zinc-900">
+              La confianza de quienes han vendido con nosotros
             </h2>
             <div className="mt-3 flex items-center gap-3 text-sm text-zinc-700">
               <div className="flex text-amber-400" aria-hidden="true">
@@ -424,7 +443,7 @@ export default function HomePage() {
             {REVIEWS.map((review) => (
               <div
                 key={review.author}
-                className="p-8 bg-white border border-zinc-200 rounded-2xl flex flex-col justify-between hover:shadow-xs transition-shadow duration-150"
+                className="p-8 bg-zinc-50 border border-zinc-200 rounded-2xl flex flex-col justify-between hover:shadow-xs transition-shadow duration-150"
               >
                 <div>
                   <div className="flex items-center gap-1 text-amber-400 mb-5" aria-hidden="true">
@@ -436,10 +455,10 @@ export default function HomePage() {
                     &ldquo;{review.text}&rdquo;
                   </blockquote>
                 </div>
-                <div className="mt-6 pt-4 border-t border-zinc-100 flex items-center justify-between">
+                <div className="mt-6 pt-4 border-t border-zinc-200/80 flex items-center justify-between">
                   <div>
                     <p className="font-semibold text-zinc-900 text-sm">{review.author}</p>
-                    <p className="text-xs text-zinc-500">Reseña en Google</p>
+                    <p className="text-xs text-zinc-500">Reseña verificada en Google</p>
                   </div>
                 </div>
               </div>
@@ -448,8 +467,11 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Contact CTA */}
-      <ContactCTA />
+      {/* 6. Contact CTA: Enfoque Propietario */}
+      <ContactCTA
+        title="¿Pensando en vender o valorar su inmueble en Gijón?"
+        subtitle="Hable directamente con Natalia Arto y nuestro equipo. Le asesoraremos con rigor, total transparencia y sin ningún compromiso."
+      />
     </div>
   );
 }
